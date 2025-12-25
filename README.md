@@ -1,6 +1,9 @@
-# 🎬 Netflix Data Analysis
+# 🎬 Netflix Data Analysis (with LLM-Enhanced Insights)
 
-This project is an exploratory data analysis (EDA) of a Netflix dataset using Python. It highlights key insights into Netflix’s content catalog including content types, top countries, director popularity, and content rating distribution.
+This project is an exploratory data analysis (EDA) of a Netflix dataset using Python.  
+It highlights key insights into Netflix’s content catalog including content types, top countries, director and actor popularity, rating distribution, and year-wise content trends.
+
+Additionally, the project integrates **Large Language Models (LLMs)** to automatically generate **natural-language, executive-level insights** from analytical results, enhancing data storytelling.
 
 ---
 
@@ -15,7 +18,7 @@ The dataset includes details about Netflix titles such as:
 - Date Added  
 - Release Year  
 - Rating  
-- Description
+- Description  
 
 > Source: [Netflix Titles Dataset on Kaggle](https://www.kaggle.com/datasets/shivamb/netflix-shows)
 
@@ -29,27 +32,46 @@ The dataset includes details about Netflix titles such as:
 - **Content Type Distribution**  
   Counted and visualized the number of Movies vs TV Shows using `value_counts()`.
 
-- **Top 5 Countries**  
+- **Top Countries Analysis**  
   Identified the countries with the most titles available on Netflix.
 
-- **Top 5 Directors**  
-  Listed the directors with the highest number of titles in the dataset.
+- **Top Directors & Actors**  
+  Extracted and analyzed the most frequently appearing directors and actors by exploding multi-valued columns.
 
 - **Year-wise Content Additions**  
-  Extracted `year_added` from the `date_added` column and plotted how many titles were added each year.
+  Extracted `year_added` from the `date_added` column and plotted how Netflix’s content library grew over time.
 
 - **Rating Distribution**  
-  Analyzed the distribution of content ratings like TV-MA, TV-14, PG, etc.
+  Analyzed the distribution of content ratings such as TV-MA, TV-14, PG, etc.
 
 ---
 
-## 🛠️ Libraries Used
+## 🤖 LLM Integration (Generative AI)
+
+This project integrates **Large Language Models (LLMs)** to enhance analytical storytelling.
+
+### Key LLM Use Case
+- **Auto-Generated Insights**  
+  Aggregated analytical results (e.g., top actors, genres, trends) are converted into **clear, professional, executive-level insights** using an LLM.
+
+### How It Works
+1. Data is analyzed using Pandas.
+2. Key results are converted into structured text.
+3. A pre-trained LLM generates human-readable insights from the analysis.
+4. Visualizations are created using Matplotlib, while insights are displayed alongside them.
+
+> The LLM is used **only for inference**, not for model training, following industry best practices.
+
+---
+
+## 🛠️ Libraries & Tools Used
 
 - Python 3.x  
 - Jupyter Notebook  
 - Pandas  
 - Seaborn  
-- Matplotlib
+- Matplotlib  
+- OpenAI API (LLM-based insight generation)  
 
 ---
 
@@ -60,25 +82,39 @@ The dataset includes details about Netflix titles such as:
    git clone https://github.com/your-username/netflix-data-analysis.git
    cd netflix-data-analysis
 
+
 2. **Install the required libraries**:
    ```bash
    pip install -r requirements.txt
 
-3. **Open the notebook:**
+3. **Set up environment variables:**
+
+    *Create a .env file in the project root
+
+      *Add your API key: OPENAI_API_KEY=your_api_key_here
+4. **Open the notebook:**
    ```bash
    jupyter notebook NETFLIX_DATA_ANALYSIS.ipynb
 
+
+**🔐 Security Note**
+
+API keys are stored securely using environment variables and are excluded from version control via .gitignore.
+Any previously exposed keys were revoked to ensure repository security.
+
 ## 🔮 Future Improvements
-Add analysis based on listed_in (genres)
+Add deeper genre-level analysis using listed_in
 
-Explore duration data (e.g., movie lengths, TV seasons)
+Perform sentiment or thematic analysis on content descriptions using LLMs
 
-Use Plotly or Streamlit for interactive dashboards
+Build interactive dashboards using Streamlit or Power BI
 
-Include popularity or user ratings (if available)
+Enable natural-language querying over the dataset
+
+Extend LLM usage for automated report generation
 
 
 ## AUTHOR
 Aaradhya Maharishi
-maharishiaaradhya@gmail.com
+aaradhyamaharishi18@gmail.com
 
